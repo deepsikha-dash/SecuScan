@@ -2,8 +2,8 @@
   "id": "website-recon-2",
   "name": "Website Recon",
   "version": "1.0.0",
-  "description": "Fingerprint web technologies of target website.",
-  "long_description": "Fingerprint web technologies of target website.",
+  "description": "Perform website reconnaissance focused on identifying web technologies, frameworks, and application stack details.",
+  "long_description": "Perform website reconnaissance focused on identifying web technologies, frameworks, and application stack details.",
   "category": "recon",
   "author": {
     "name": "SecuScan Contributors",

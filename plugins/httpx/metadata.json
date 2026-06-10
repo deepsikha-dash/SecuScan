@@ -2,8 +2,8 @@
   "id": "httpx",
   "name": "httpx",
   "version": "1.0.0",
-  "description": "Live host probing with status, title, and technology fingerprinting.",
-  "long_description": "Live host probing with status, title, and technology fingerprinting.",
+  "description": "Probe live hosts and collect reachability information, status codes, page titles, and basic technology indicators.",
+  "long_description": "Probe live hosts and collect reachability information, status codes, page titles, and basic technology indicators.",
   "category": "recon",
   "author": {
     "name": "SecuScan Contributors",
