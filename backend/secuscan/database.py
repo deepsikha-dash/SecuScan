@@ -559,13 +559,15 @@ class Database:
         print(f"Backfilled risk scores for {len(rows)} existing finding(s).")
 
     async def execute(self, query: str, params: tuple = ()):
-        """Execute a write query."""
-        await self.connection.execute(query, params)
+        """Execute a write query and return the cursor (so callers can inspect rowcount)."""
+        cursor = await self.connection.execute(query, params)
         await self.connection.commit()
+        return cursor
 
     async def execute_no_commit(self, query: str, params: tuple = ()):
         """Execute a write query without committing (for use inside transactions)."""
-        await self.connection.execute(query, params)
+        cursor = await self.connection.execute(query, params)
+        return cursor
 
     async def begin(self):
         """Begin a transaction."""
