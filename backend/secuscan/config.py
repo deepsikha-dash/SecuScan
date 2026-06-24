@@ -172,6 +172,9 @@ class Settings(BaseSettings):
     smtp_from_email: str = "noreply@secuscan.io"
     smtp_use_tls: bool = True
 
+    # Slack Webhook Configuration
+    slack_webhook_url: Optional[str] = None
+
     class Config:
         env_prefix = "SECUSCAN_"
         case_sensitive = False
