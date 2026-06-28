@@ -6,9 +6,11 @@ import json
 import re
 from .redaction import redact, redact_dict
 from .ai_summary import generate_summary
-from datetime import datetime
+from datetime import datetime, timezone
 from functools import lru_cache
 from typing import Any, Dict, List
+
+from backend import __version__
 
 from PIL import Image, ImageDraw
 from xhtml2pdf import pisa
@@ -1247,8 +1249,15 @@ class ReportGenerator:
                             "name": tool_name,
                             "version": "1.0.0",
                             "informationUri": "https://github.com/utksh1/SecuScan",
-                            "rules": rules
+                            "rules": rules,
+                            "properties": {
+                                "generatorVersion": __version__,
+                            },
                         }
+                    },
+                    "properties": {
+                        "pluginId": task.get("plugin_id"),
+                        "exportTimestamp": datetime.now(timezone.utc).isoformat(),
                     },
                     "results": results
                 }
